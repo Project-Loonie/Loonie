@@ -2193,7 +2193,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
     ret = blockValue * 0.7; // 70% of rewards to MN
     }
     else {
-    ret = blockValue * 0.8 // 80% of rewards to MN
+    ret = blockValue * 0.8; // 80% of rewards to MN
     }
 
     return ret;
