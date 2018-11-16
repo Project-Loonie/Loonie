@@ -55,21 +55,19 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (     0, uint256("180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"))
-	(3001, uint256("d2bd76d2068dd66e0304b3b34924c9bbf00865087d8dbf55854f7ca2e255670b")) // first block after POW end
-    (7474, uint256("34847b79125d8907c6fb5abf04038b56b1bf7e84100740ee85202b8676bef204"))
-    (15000, uint256("e524e078ca586d59f0378743e3a5e40782b5169b6028ff2e35557b9d8794695f"));
+    (     0, uint256("0x001"))
+	
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
 	1534993375, // * UNIX timestamp of last checkpoint block
-	27018,     // * total number of transactions between genesis and last checkpoint
+	0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    1500        // * estimated number of transactions per day after checkpoint
+    400        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
+    boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1533640145,
@@ -77,10 +75,10 @@ static const Checkpoints::CCheckpointData dataTestnet = {
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
+    boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1533640145,
+    0,
     0,
     100};
 
@@ -117,26 +115,26 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x91;
-        pchMessageStart[1] = 0xc4;
-        pchMessageStart[2] = 0xfd;
-        pchMessageStart[3] = 0xe9;
+        pchMessageStart[0] = 0x5d;
+        pchMessageStart[1] = 0xe6;
+        pchMessageStart[2] = 0xb0;
+        pchMessageStart[3] = 0x4b;
         nDefaultPort = 58923;
-        bnProofOfWorkLimit = ~uint256(0) >> 1;
+        bnProofOfWorkLimit = ~uint256(0) >> 20;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 1 * 60; // Loonie: 1 day
+        nTargetTimespan = 1 * 60; // Loonie: 1 minute
         nTargetSpacing = 1 * 60;  // Loonie: 1 minute
-        nMaturity = 100;
+        nMaturity = 20;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 1000000000 * COIN;
+        nMaxMoneyOut = 130000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 3000;
-        nZerocoinStartHeight = 200; // Chain moving at normal pace at this block.
+        nLastPOWBlock = 2000;
+        nZerocoinStartHeight = 1500; // Chain moving at normal pace at this block.
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -148,7 +146,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "Welcome to the weirdly wonderful world of crypto-art";
+        const char* pszTimestamp = "A rude awakening causes people to lose their sleep! Nov, 2018";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -160,11 +158,11 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1533640145;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1;
+        genesis.nNonce = 3226936;
 
         // Uncomment the following block of code if you want to create a genesis block by running ./loonied.
         // Make sure to create a new psztimestamp and set your nonce to 0 before compiling, also comment out the assert lines below this block!
-        /*printf("calc new genesis block\n");
+        printf("calc new genesis block\n");
         printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
         printf("bnProofOfWorkLimit 0x%x\n", bnProofOfWorkLimit.GetCompact());
         printf("genesis.nBits 0x%x\n", genesis.nBits);
@@ -176,31 +174,30 @@ public:
 
         printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
         printf("genesis.nNonce %d\n", genesis.nNonce);
-        printf("genesis.nTime %d\n", genesis.nTime);*/
+        printf("genesis.nTime %d\n", genesis.nTime);
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
-        assert(genesis.hashMerkleRoot == uint256("0x1c2771797cba9b90fb491e2fa45c2b140fe0575e0cca97aa8c0adca84e9e028e"));
+        //assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
+        //assert(genesis.hashMerkleRoot == uint256("0x1c2771797cba9b90fb491e2fa45c2b140fe0575e0cca97aa8c0adca84e9e028e"));
 
-        vSeeds.push_back(CDNSSeedData("0", "seed1.loonie.io"));
-        vSeeds.push_back(CDNSSeedData("1", "seed2.loonie.io"));
-        vSeeds.push_back(CDNSSeedData("2", "seed3.loonie.io"));
-        vSeeds.push_back(CDNSSeedData("3", "seed4.loonie.io"));
-        vSeeds.push_back(CDNSSeedData("4", "seed5.loonie.io"));
+        vSeeds.push_back(CDNSSeedData("0", "195.181.244.223"));
+        vSeeds.push_back(CDNSSeedData("1", "40.122.72.200"));
+        vSeeds.push_back(CDNSSeedData("2", "40.68.1.137"));
+        //vSeeds.push_back(CDNSSeedData("3", "seed4.loonie.io"));
+        //vSeeds.push_back(CDNSSeedData("4", "seed5.loonie.io"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 48);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
-        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
-        // 	BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
-        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x01)(0xbc).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 48); //LOONIE Addresses start with L
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 2);
+        base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 25);
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x16)(0x8b)(0x53)(0x33).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x0a)(0xcc)(0xd2)(0x2B).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x2e).convert_to_container<std::vector<unsigned char> >();
 
         bech32_hrp = "xln";
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
@@ -210,16 +207,13 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "048aa0e5c422632834bffd0588817bf90d7b19423a9d6b6959bc480d0d8bfc837ef6d4d6f90213bcde3e8a160dc7fa98840555e0bf0d7402001eafdcb8e6a5a18d";
-        strObfuscationPoolDummyAddress = "LCYiHgGJJ6xGHqivmdZrYjRnhaYf6AJ2Mp";
+        strSporkKey = "04e53dc6ca6e7d2571b8ef53da4fa125d6f71d2b11c8eb1a91a4c97790521630620e021709f57cf5b7b7ae0b6dd69c0417fa15a5354cc834173eccd9b2fc654a14";
+        strObfuscationPoolDummyAddress = "Lr5iHgGJJ6xGHqivmdZrYjRnhaYf7AJ2Mj";
 
         /** Zerocoin */
-        zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
-            "4069182906412495150821892985591491761845028084891200728449926873928072877767359714183472702618963750149718246911"
-            "6507761337985909570009733045974880842840179742910064245869181719511874612151517265463228221686998754918242243363"
-            "7259085141865462043576798423387184774447920739934236584823824281198163815010674810451660377306056201619676256133"
-            "8441436038339044149526344321901146575444541784240209246165157233507787077498171257724679629263863563732899121548"
-            "31438167899885040445364023527381951378636564391212010397122822120720357";
+        zerocoinModulus = "25195908475657893494027143240048398571429282226204032027777177836043662020707595556264018525880784"
+            
+            "31438167899883060445364023527381951377636564391212018397122822160720357";
 
         nZerocoinLastOldParams = 99999999; // Updated to defer zerocoin v2 for further testing.
         nMaxZerocoinSpendsPerTransaction = 7; // Assume about 20kb each
@@ -248,10 +242,10 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0x47;
-        pchMessageStart[1] = 0x76;
-        pchMessageStart[2] = 0x65;
-        pchMessageStart[3] = 0xba;
+        pchMessageStart[0] = 0xab;
+        pchMessageStart[1] = 0xb2;
+        pchMessageStart[2] = 0xc9;
+        pchMessageStart[3] = 0x84;
         nDefaultPort = 59923;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
@@ -272,7 +266,7 @@ public:
         genesis.nNonce = 1;
 
         // Uncomment for genesis block creation
-        /*printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        *printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
         {
           printf("(test)calc new genesis block\n");
           printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
@@ -284,25 +278,25 @@ public:
             if (hashGenesisBlock <= bnProofOfWorkLimit) break;
           }
 
-          printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
-          printf("genesis.nNonce %d\n", genesis.nNonce);
-        }*/
+          printf("testhashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+          printf("testgenesis.nNonce %d\n", genesis.nNonce);
+        }
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
+        //assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet loonie addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet loonie script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 56); // Testnet loonie addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 2);  // Testnet loonie script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         // Testnet loonie BIP32 pubkeys start with 'DRKV'
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x4a)(0x80)(0x41)(0xa0).convert_to_container<std::vector<unsigned char> >();
         // Testnet loonie BIP32 prvkeys start with 'DRKP'
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x4a)(0x80)(0x48)(0x37).convert_to_container<std::vector<unsigned char> >();
         // Testnet loonie BIP44 coin type is '1' (All coin's testnet default)
-        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x01)(0x00)(0x00)(0x80).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x01)(0x00)(0x00)(0x40).convert_to_container<std::vector<unsigned char> >();
 
         bech32_hrp = "txln";
 
@@ -316,8 +310,8 @@ public:
         fTestnetToBeDeprecatedFieldRPC = true;
 
         nPoolMaxTransactions = 2;
-        strSporkKey = "048aa0e5c422632834bffd0588817bf90d7b19423a9d6b6959bc480d0d8bfc837ef6d4d6f90213bcde3e8a160dc7fa98840555e0bf0d7402001eafdcb8e6a5a18d";
-        strObfuscationPoolDummyAddress = "LCYiHgGJJ6xGHqivmdZrYjRnhaYf6AJ2Mp";
+        strSporkKey = "04ed6d0930754e51bfcbd7414736ea60eb91a76a7de4734b165056ae4b24671779d7ad622b87edb6d50db693163d67fa362046e26d9c06341d4459f524f7627ae7";
+        strObfuscationPoolDummyAddress = "LnbiHgGJJ6xGHqivmdZrYjRnhaYf6AJ2Mp";
         nBudgetFeeConfirmations = 3; // Number of confirmations for the finalization fee. We have to make this very short
                                      // here because we only have a 8 block finalization window on testnet
     }
@@ -339,15 +333,15 @@ public:
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
         strNetworkID = "regtest";
-        pchMessageStart[0] = 0xa2;
-        pchMessageStart[1] = 0xcf;
-        pchMessageStart[2] = 0x7e;
-        pchMessageStart[3] = 0xac;
+        pchMessageStart[0] = 0xb2;
+        pchMessageStart[1] = 0xae;
+        pchMessageStart[2] = 0x5e;
+        pchMessageStart[3] = 0xcc;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 1;
-        nTargetTimespan = 24 * 60 * 60; // Loonie: 1 day
+        nTargetTimespan = 1 * 60; // Loonie: 1 day
         nTargetSpacing = 1 * 60;        // Loonie: 1 minutes
         bnProofOfWorkLimit = 0x207fffff; //~uint256(0) >> 1;
         genesis.nTime = 1533640145;
@@ -362,7 +356,7 @@ public:
         nDefaultPort = 59923;
 
         // Uncomment for genesis block creation
-        /*printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+        *printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
 
         {
@@ -378,7 +372,7 @@ public:
 
           printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
           printf("genesis.nNonce %d\n", genesis.nNonce);
-        }*/
+        }
 
         assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
 
