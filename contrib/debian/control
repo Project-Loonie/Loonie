@@ -1,8 +1,8 @@
 Source: loonie
 Section: utils
 Priority: optional
-Maintainer: Loonie Team <admin@loonie.io>
-Uploaders: Loonie Team <admin@loonie.io>
+Maintainer: Loonie Team <admin@loonienetwork.online>
+Uploaders: Loonie Team <admin@loonienetwork.online>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -22,7 +22,7 @@ Build-Depends: debhelper,
  libqrencode-dev,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
-Homepage: http://www.loonie.io
+Homepage: http://www.loonienetwork.online
 Vcs-Git: git://github.com/LoonieCoin/Loonie.git
 Vcs-Browser: http://github.com/LoonieCoin/Loonie
 

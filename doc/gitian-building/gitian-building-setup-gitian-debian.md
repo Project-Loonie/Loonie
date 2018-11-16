@@ -70,9 +70,9 @@ Clone the git repositories for loonie and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/LoonieCoin/loonie
+git clone https://github.com/Project-Loonie/Loonie
 git clone https://github.com/LoonieCoin/gitian.sigs.git
-git clone https://github.com/LoonieCoin/loonie-detached-sigs.git
+git clone https://github.com/Project-Loonie/Loonie-detached-sigs.git
 ```
 
 Setting up the Gitian image

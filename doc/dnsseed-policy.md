@@ -46,7 +46,7 @@ related to the DNS seed operation.
 If these expectations cannot be satisfied the operator should
 discontinue providing services and contact the active Loonie
 Core development team as well as posting on the
-[Loonie Forum](https://forum.loonie.io).
+[Loonie Forum](https://forum.loonienetwork.online).
 
 Behavior outside of these expectations may be reasonable in some
 situations but should be discussed in public in advance.

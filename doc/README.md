@@ -3,7 +3,7 @@ Loonie
 
 Setup
 ---------------------
-[Loonie](http://loonie.io/wallet) is the original Loonie client and it builds the backbone of the network. However, it downloads and stores the entire history of Loonie transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
+[Loonie](http://loonienetwork.online/wallet) is the original Loonie client and it builds the backbone of the network. However, it downloads and stores the entire history of Loonie transactions; depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more. Thankfully you only have to do this once.
 
 Running
 ---------------------
@@ -28,8 +28,8 @@ Drag Loonie-Qt to your applications folder, and then run Loonie-Qt.
 
 * See the documentation at the [Loonie Wiki](https://en.bitcoin.it/wiki/Main_Page) ***TODO***
 for help and more information.
-* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Loonie Forum](http://forum.loonie.io/).
-* Join one of our Slack groups [Loonie Slack Groups](https://loonie.io/slack-logins/).
+* Ask for help on [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or on the [Loonie Forum](http://forum.loonienetwork.online/).
+* Join one of our Slack groups [Loonie Slack Groups](https://loonienetwork.online/slack-logins/).
 * Join our Discord server [Discord Server](https://discord.gg/DT39dfy)
 
 Building
@@ -56,7 +56,7 @@ The Loonie repo's [root README](https://github.com/LoonieCoin/Loonie/blob/master
 
 ### Resources
 
-* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Loonie](http://forum.loonie.io/) forum.
+* Discuss on the [BitcoinTalk](https://bitcointalk.org/index.php?topic=1262920.0) or the [Loonie](http://forum.loonienetwork.online/) forum.
 * Join the [Loonie-Dev](https://loonie-dev.slack.com/) Slack group ([Sign-Up](https://loonie-dev.herokuapp.com/)).
 
 ### Miscellaneous

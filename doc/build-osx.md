@@ -176,7 +176,7 @@ Next, switch into your Downloads folder:
 
 The next step is to download the current version of the wallet from Github and go into that directory:
 
-```git clone https://github.com/LoonieCoin/loonie.git```
+```git clone https://github.com/Project-Loonie/Loonie.git```
 ```cd Loonie```
 
 Now set some configuration flags:

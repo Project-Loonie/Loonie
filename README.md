@@ -2,24 +2,24 @@ Loonie integration/staging repository
 =====================================
 
 Loonie is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
-- 100% Proof of Stake 3.0 Consensus protocol, allowing very low transaction fees and energy expenditure, and staking rewards to all participants in the network.
-- Masternode technology used to secure the network and provide additional features. Each Masternode is secured with collateral of 10,000 LNI.
+- POW followed by Proof of Stake 3.0 Consensus protocol, allowing very low transaction fees and energy expenditure, and staking rewards to all participants in the network.
+- Masternode technology used to secure the network and provide additional features. Each Masternode is secured with collateral of 50,000 LNI.
 - Decentralized blockchain voting utilizing Masternode technology. The blockchain will distribute monthly treasury funds based on successful proposals submitted by the community and voted on by the Masternodes.
-- 5.2M Loonie was produced for swapping SLRC to LNI. 
+- 1.5 M Loonie was premined for swapping LNI tokens to LNI coin. 
 
 ## Links ##
 
-Webpage: http://www.loonie.io/  
-Twitter: https://twitter.com/looniecoin/  
-Discord: https://discord.gg/4nFZeJr  
-Explorer: http://explorer.loonie.io/  
+Webpage: http://www.loonienetwork.online/  
+Twitter: https://twitter.com/LoonieNetwork/  
+Discord: https://discord.gg/  
+Explorer: http://explorer.loonienetwork.online/  
 
 ## Coin Specs ##
 <table>
 <tr><td>Algo</td><td>Quark</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
 <tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
-<tr><td>Max Coin Supply</td><td>Infinite</td></tr>
+<tr><td>Max Coin Supply</td><td>130 Million</td></tr>
 </table>
 
 ## PoS Rewards Breakdown ##
@@ -37,6 +37,6 @@ Explorer: http://explorer.loonie.io/
 <tr><td>3,709,209</td><td>3 LNI</td><td>2.1 LNI</td><td>0.9 LNI</td></tr>
 </table>
 
-Please note that all transaction fees on Loonie are burnt and the POS receiver pays this fee for new blocks. Transaction fees for new block during testing has been 0.0000416 LNI. 
+Please note that all transaction fees on Loonie are burnt and the POS receiver pays this fee for new blocks. 
 
-The Loonie development budget is up to a maximum of 1 LNI per block, paid out based on approved proposals every 30 days (or 43,200 blocks) as voted on by the Loonie masternode owners through the community governance process. These coins will only be generated if there are approved proposals.
+

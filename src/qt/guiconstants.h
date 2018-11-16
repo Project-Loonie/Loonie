@@ -51,7 +51,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 35
 
 #define QAPP_ORG_NAME "Loonie"
-#define QAPP_ORG_DOMAIN "loonie.io"
+#define QAPP_ORG_DOMAIN "loonienetwork.online"
 #define QAPP_APP_NAME_DEFAULT "Loonie-Qt"
 #define QAPP_APP_NAME_TESTNET "Loonie-Qt-testnet"
 

@@ -1,13 +1,13 @@
 Loonie version 1.0.0 is now available from:
 
-  <https://github.com/LoonieCoin/loonie/releases>
+  <https://github.com/Project-Loonie/Loonie/releases>
 
 This is a new minor-revision version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/LoonieCoin/loonie/issues>
+  <https://github.com/Project-Loonie/Loonie/issues>
 
 
 Mandatory Update
