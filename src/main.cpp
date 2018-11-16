@@ -2153,31 +2153,49 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight)
 {
     if (nHeight == 0) {
-        return 5200000 * COIN; //5.2M premine
-    } else if (nHeight <= 30000) { // end of swap period
-        return 0.001 * COIN;
+        return 1500000 * COIN; //5.2M premine
+    } else if (nHeight <= 2000) { // end of swap period
+        return 2000 * COIN;        
+    } else if (nHeight <= 30000) { 
+        return 30 * COIN;
     } else if (nHeight <= 555602) { 
-        return 10 * COIN;
+        return 50 * COIN;
     } else if (nHeight <= 1081203) { 
-        return 9 * COIN;
+        return 50 * COIN;
     } else if (nHeight <= 1606804) {
-        return 8 * COIN;
+        return 40 * COIN;
     } else if (nHeight <= 2132405) { 
-        return 7 * COIN;
+        return 30 * COIN;
     } else if (nHeight <= 2658006) { 
-        return 6 * COIN;
+        return 20 * COIN;
     } else if (nHeight <= 3183607) { 
-        return 5 * COIN;
+        return 10 * COIN;
     } else if (nHeight <= 3709208) {
-        return 4 * COIN;
+        return 5 * COIN;
     } else {
-        return 3 * COIN;
+        return 0.001 * COIN;
     }
 }
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount)
 {
-    int64_t ret = blockValue * 0.7; // 70% of rewards to MN
+    int64_t ret = 0;
+    if (nHeight <= 3000) {
+    ret = blockValue * 0.4; // 40% of rewards to MN
+    }
+    else if (nHeight <= 10000) {
+    ret = blockValue * 0.5; // 50% of rewards to MN
+    }
+    else if (nHeight <= 100000) {
+    ret = blockValue * 0.6; // 60% of rewards to MN
+    }
+    else if (nHeight <= 150000) {
+    ret = blockValue * 0.7; // 70% of rewards to MN
+    }
+    else {
+    ret = blockValue * 0.8 // 80% of rewards to MN
+    }
+
     return ret;
 }
 
