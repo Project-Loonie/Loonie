@@ -354,7 +354,7 @@ public:
         nDefaultPort = 59923;
 
         // Uncomment for genesis block creation
-        printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+        /*printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
 
         {
@@ -370,9 +370,9 @@ public:
 
           printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
           printf("genesis.nNonce %d\n", genesis.nNonce);
-        }
+        }*/
 
-        assert(hashGenesisBlock == uint256("0x00000aa8af882a863da0d4a1b620b4f9f1e4f0d3513703bf9676ab55e1c7038a"));
+        assert(hashGenesisBlock == uint256("0xe0bf9e03ed09a2e06a43e121023882383033d2f1f28d723da5714d591bf147ad"));
 
         bech32_hrp = "xlnrt";
 
