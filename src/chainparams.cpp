@@ -372,7 +372,7 @@ public:
           printf("genesis.nNonce %d\n", genesis.nNonce);
         }
 
-        //assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
+        assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
 
         bech32_hrp = "xlnrt";
 
