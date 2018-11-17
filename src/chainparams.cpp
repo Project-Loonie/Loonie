@@ -60,7 +60,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-	1534993375, // * UNIX timestamp of last checkpoint block
+	1542449345, // * UNIX timestamp of last checkpoint block
 	0,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     400        // * estimated number of transactions per day after checkpoint
@@ -70,7 +70,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1533640145,
+    1542449345,
     0,
     250};
 
@@ -156,7 +156,7 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1533640145;
+        genesis.nTime = 1542449345;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 3226936;
 
@@ -180,9 +180,9 @@ public:
         //assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
         //assert(genesis.hashMerkleRoot == uint256("0x1c2771797cba9b90fb491e2fa45c2b140fe0575e0cca97aa8c0adca84e9e028e"));
 
-        vSeeds.push_back(CDNSSeedData("0", "195.181.244.223"));
-        vSeeds.push_back(CDNSSeedData("1", "40.122.72.200"));
-        vSeeds.push_back(CDNSSeedData("2", "40.68.1.137"));
+        vSeeds.push_back(CDNSSeedData("195.181.244.223", "195.181.244.223"));
+        vSeeds.push_back(CDNSSeedData("40.122.72.200", "40.122.72.200"));
+        vSeeds.push_back(CDNSSeedData("40.68.1.137", "40.68.1.137"));
         //vSeeds.push_back(CDNSSeedData("3", "seed4.loonie.io"));
         //vSeeds.push_back(CDNSSeedData("4", "seed5.loonie.io"));
 
@@ -260,7 +260,7 @@ public:
         nZerocoinLastOldParams = 100000000;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1533640145;
+        genesis.nTime = 1542449345;
         genesis.nNonce = 1;
 
         // Uncomment for genesis block creation
@@ -342,7 +342,7 @@ public:
         nTargetTimespan = 1 * 60; // Loonie: 1 day
         nTargetSpacing = 1 * 60;        // Loonie: 1 minutes
         bnProofOfWorkLimit = 0x207fffff; //~uint256(0) >> 1;
-        genesis.nTime = 1533640145;
+        genesis.nTime = 1542449345;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 1;
         nMaturity = 0;
@@ -372,7 +372,7 @@ public:
           printf("genesis.nNonce %d\n", genesis.nNonce);
         }
 
-        assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
+        //assert(hashGenesisBlock == uint256("0x180b567eddde3001577f12de7d94c0e9a2db6121c9604d12d6ffe10cd54853fe"));
 
         bech32_hrp = "xlnrt";
 
