@@ -546,9 +546,9 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/icons/transaction_conflicted.png \
 	qt/res/icons/tx_inout.png qt/res/icons/tx_input.png \
 	qt/res/icons/tx_output.png qt/res/icons/tx_mined.png \
-	qt/res/icons/unit_xln.png qt/res/icons/unit_mxln.png \
-	qt/res/icons/unit_uxln.png qt/res/icons/unit_txln.png \
-	qt/res/icons/unit_tmxln.png qt/res/icons/unit_tuxln.png \
+	qt/res/icons/unit_loonie.png qt/res/icons/unit_mloonie.png \
+	qt/res/icons/unit_uloonie.png qt/res/icons/unit_tloonie.png \
+	qt/res/icons/unit_tmloonie.png qt/res/icons/unit_tuloonie.png \
 	qt/res/images/about.png qt/res/images/splash.png \
 	qt/res/images/splash_testnet.png \
 	qt/res/images/loonie_logo_horizontal.png \
@@ -2312,12 +2312,12 @@ RES_ICONS = \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
   qt/res/icons/tx_mined.png \
-  qt/res/icons/unit_xln.png \
-  qt/res/icons/unit_mxln.png \
-  qt/res/icons/unit_uxln.png \
-  qt/res/icons/unit_txln.png \
-  qt/res/icons/unit_tmxln.png \
-  qt/res/icons/unit_tuxln.png
+  qt/res/icons/unit_loonie.png \
+  qt/res/icons/unit_mloonie.png \
+  qt/res/icons/unit_uloonie.png \
+  qt/res/icons/unit_tloonie.png \
+  qt/res/icons/unit_tmloonie.png \
+  qt/res/icons/unit_tuloonie.png
 
 BITCOIN_QT_CPP = qt/bantablemodel.cpp \
 	qt/bitcoinaddressvalidator.cpp \
