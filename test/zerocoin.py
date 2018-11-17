@@ -9,7 +9,7 @@
 #   a) creates 3 nodes, with an empty chain (no blocks).
 #   b) node0 mines a block
 #   c) node1 mines 32 blocks, so now node 0 has 60001phr, node 1 has 4250phr, node2 has none.
-#   d) node0 sends 601 xln to node2, in two transactions (301 xln, then 300 xln).
+#   d) node0 sends 601 loonie to node2, in two transactions (301 loonie, then 300 loonie).
 #   e) node0 mines a block, collects the fee on the second transaction
 #   f) node1 mines 16 blocks, to mature node0's just-mined block
 #   g) check that node0 has 100-21, node2 has 21
