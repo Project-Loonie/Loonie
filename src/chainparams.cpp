@@ -264,7 +264,7 @@ public:
         genesis.nNonce = 1;
 
         // Uncomment for genesis block creation
-        *printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
+        printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
         {
           printf("(test)calc new genesis block\n");
           printf("hashMerkleRoot %s\n", genesis.hashMerkleRoot.ToString().c_str());
@@ -354,7 +354,7 @@ public:
         nDefaultPort = 59923;
 
         // Uncomment for genesis block creation
-        *printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
+        printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
         printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
 
         {
