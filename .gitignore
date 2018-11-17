@@ -1,6 +1,5 @@
 *.sublime-project
 *.sublime-workspace
-.vscode
 todo.txt
 reset-files.bash
 
@@ -13,6 +12,9 @@ src/loonie-cli
 src/loonie-tx
 src/test/test_loonie
 src/qt/test/test_loonie-qt
+src/qt/test/test_venox-qt
+src/test/.deps
+*.Po
 
 # autoreconf
 Makefile.in
@@ -45,13 +47,13 @@ share/setup.nsi
 share/qt/Info.plist
 contrib/devtools/split-debug.sh
 
+src/univalue/gen
+
 src/qt/*.moc
 src/qt/moc_*.cpp
 src/qt/forms/ui_*.h
 
 src/qt/test/moc*.cpp
-
-src/leveldb/build_config.mk
 
 .deps
 .dirstamp
@@ -74,7 +76,6 @@ src/leveldb/build_config.mk
 *.dmg
 
 *.json.h
-!accumulatorcheckpoints.json.h
 *.raw.h
 
 #libtool object files
@@ -83,7 +84,7 @@ src/leveldb/build_config.mk
 
 # Compilation and Qt preprocessor part
 *.qm
-Makefile
+/Makefile
 loonie-qt
 loonie-Qt.app
 
@@ -118,24 +119,17 @@ qa/pull-tester/tests-config.sh
 qa/pull-tester/cache/*
 qa/pull-tester/test.*/*
 
+!src/leveldb*/Makefile
+
 .cproject
 .project
 /doc/doxygen/
 /nbproject/
 
 .idea
+CMakeLists.txt
 cmake-build-debug
 
-cache
-
-\.settings/
-
-Loonie\.config
-
-Loonie\.creator
-
-Loonie\.creator\.user
-
-Loonie\.files
-
-Loonie\.includes
+.Po
+ .gitignore
+ *.key
