@@ -11,7 +11,7 @@ Loonie is a cutting edge cryptocurrency, with many features not available in mos
 
 Webpage: http://www.loonienetwork.online/  
 Twitter: https://twitter.com/LoonieNetwork/  
-Discord: https://discord.gg/R5KxnR7 
+Discord: https://discord.gg/R5KxnR7
 Explorer: http://explorer.loonienetwork.online/  
 
 ## Coin Specs ##
