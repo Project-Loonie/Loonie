@@ -11,7 +11,7 @@ Loonie is a cutting edge cryptocurrency, with many features not available in mos
 
 Webpage: http://www.loonienetwork.online/  
 Twitter: https://twitter.com/LoonieNetwork/  
-Discord: https://discord.gg/  
+Discord: https://discord.gg/R5KxnR7 
 Explorer: http://explorer.loonienetwork.online/  
 
 ## Coin Specs ##
@@ -26,15 +26,17 @@ Explorer: http://explorer.loonienetwork.online/
 
 <table>
 <th>From Block</th><th>Reward</th><th>Masternodes</th><th>Stakers</th>
-<tr><td>2</td><td>0.001 LNI</td><td>0.0007 LNI</td><td>0.0003 LNI</td></tr>
-<tr><td>30,002</td><td>10 LNI</td><td>7 LNI</td><td>3 LNI</td></tr>
-<tr><td>555,602</td><td>9 LNI</td><td>6.3 LNI</td><td>2.7 LNI</td></tr>
-<tr><td>1,081,203</td><td>8 LNI</td><td>5.6 LNI</td><td>2.4 LNI</td></tr>
-<tr><td>1,606,805</td><td>7 LNI</td><td>4.9 LNI</td><td>2.1 LNI</td></tr>
-<tr><td>2,132,406</td><td>6 LNI</td><td>4.2 LNI</td><td>1.8 LNI</td></tr>
-<tr><td>2,658,007</td><td>5 LNI</td><td>3.5 LNI</td><td>1.5 LNI</td></tr>
-<tr><td>3,183,608</td><td>4 LNI</td><td>2.8 LNI</td><td>1.2 LNI</td></tr>
-<tr><td>3,709,209</td><td>3 LNI</td><td>2.1 LNI</td><td>0.9 LNI</td></tr>
+<tr><td>2</td><td>2000 LNI</td><td>0 LNI</td><td>0 LNI (POW)</td></tr>
+<tr><td>2,001</td><td>30 LNI</td><td>12 LNI</td><td>18 LNI</td></tr>
+<tr><td>3,001</td><td>50 LNI</td><td>25 LNI</td><td>25 LNI</td></tr>
+<tr><td>10,001</td><td>50 LNI</td><td>30 LNI</td><td>20 LNI</td></tr>
+<tr><td>150,001</td><td>50 LNI</td><td>40 LNI</td><td>10 LNI</td></tr>
+<tr><td>555,602</td><td>50 LNI</td><td>40 LNI</td><td>10 LNI</td></tr>
+<tr><td>1,606,805</td><td>40 LNI</td><td>32 LNI</td><td>8 LNI</td></tr>
+<tr><td>2,132,406</td><td>30 LNI</td><td>24 LNI</td><td>6 LNI</td></tr>
+<tr><td>2,658,007</td><td>20 LNI</td><td>16 LNI</td><td>4 LNI</td></tr>
+<tr><td>3,183,608</td><td>10 LNI</td><td>8 LNI</td><td>2 LNI</td></tr>
+<tr><td>3,709,209</td><td>5 LNI</td><td>4 LNI</td><td>1 LNI</td></tr>
 </table>
 
 Please note that all transaction fees on Loonie are burnt and the POS receiver pays this fee for new blocks. 

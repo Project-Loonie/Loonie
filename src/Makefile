@@ -97,7 +97,7 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
-host_triplet = x86_64-pc-linux-gnu
+host_triplet = i686-w64-mingw32
 am__append_1 = -I$(srcdir)/leveldb/include \
 	-I$(srcdir)/leveldb/helpers/memenv
 am__append_2 = $(builddir)/leveldb/libleveldb.a
@@ -109,9 +109,9 @@ TESTS = $(am__EXEEXT_3) $(am__EXEEXT_5)
 am__append_4 = loonied
 am__append_5 = loonie-cli loonie-tx
 #am__append_6 = compat/glibc_compat.cpp
-#am__append_7 = loonied-res.rc
-#am__append_8 = loonie-cli-res.rc
-#am__append_9 = loonie-tx-res.rc
+am__append_7 = loonied-res.rc
+am__append_8 = loonie-cli-res.rc
+am__append_9 = loonie-tx-res.rc
 ##am__append_10 = compat/glibc_compat.cpp
 ##am__append_11 = secp256k1/libsecp256k1.la
 
@@ -140,7 +140,7 @@ am__append_5 = loonie-cli loonie-tx
 #am__append_18 = $(CLEAN_BITCOIN_TEST)
 am__append_19 = qt/loonie-qt
 am__append_20 = qt/libbitcoinqt.a
-#am__append_21 = qt/winshutdownmonitor.cpp
+am__append_21 = qt/winshutdownmonitor.cpp
 am__append_22 = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
@@ -178,7 +178,7 @@ am__append_22 = \
   qt/zphrcontroldialog.cpp
 
 #am__append_23 = $(BITCOIN_MM)
-#am__append_24 = $(BITCOIN_RC)
+am__append_24 = $(BITCOIN_RC)
 am__append_25 = $(LIBBITCOIN_WALLET)
 am__append_26 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 am__append_27 = $(CLEAN_QT)
@@ -563,7 +563,7 @@ am__qt_libbitcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/images/walletFrame.png qt/res/images/walletFrame_bg.png \
 	qt/res/css/default.css $(wildcard \
 	$(srcdir)/qt/res/movies/spinner-*.png)
-#am__objects_3 = qt/qt_libbitcoinqt_a-winshutdownmonitor.$(OBJEXT)
+am__objects_3 = qt/qt_libbitcoinqt_a-winshutdownmonitor.$(OBJEXT)
 am__objects_4 = qt/qt_libbitcoinqt_a-addressbookpage.$(OBJEXT) \
 	qt/qt_libbitcoinqt_a-addresstablemodel.$(OBJEXT) \
 	qt/qt_libbitcoinqt_a-askpassphrasedialog.$(OBJEXT) \
@@ -772,7 +772,7 @@ am__EXEEXT_4 = qt/loonie-qt$(EXEEXT)
 #am__EXEEXT_5 = qt/test/test_loonie-qt$(EXEEXT)
 PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
 am__loonie_cli_SOURCES_DIST = loonie-cli.cpp loonie-cli-res.rc
-#am__objects_11 = loonie-cli-res.$(OBJEXT)
+am__objects_11 = loonie-cli-res.$(OBJEXT)
 am_loonie_cli_OBJECTS = loonie_cli-loonie-cli.$(OBJEXT) \
 	$(am__objects_11)
 loonie_cli_OBJECTS = $(am_loonie_cli_OBJECTS)
@@ -786,7 +786,7 @@ loonie_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(loonie_cli_CXXFLAGS) \
 	$(CXXFLAGS) $(loonie_cli_LDFLAGS) $(LDFLAGS) -o $@
 am__loonie_tx_SOURCES_DIST = loonie-tx.cpp loonie-tx-res.rc
-#am__objects_12 = loonie-tx-res.$(OBJEXT)
+am__objects_12 = loonie-tx-res.$(OBJEXT)
 am_loonie_tx_OBJECTS = loonie_tx-loonie-tx.$(OBJEXT) $(am__objects_12)
 loonie_tx_OBJECTS = $(am_loonie_tx_OBJECTS)
 loonie_tx_DEPENDENCIES = $(am__DEPENDENCIES_2) $(LIBBITCOIN_COMMON) \
@@ -796,7 +796,7 @@ loonie_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(loonie_tx_CXXFLAGS) \
 	$(CXXFLAGS) $(loonie_tx_LDFLAGS) $(LDFLAGS) -o $@
 am__loonied_SOURCES_DIST = loonied.cpp loonied-res.rc
-#am__objects_13 = loonied-res.$(OBJEXT)
+am__objects_13 = loonied-res.$(OBJEXT)
 am_loonied_OBJECTS = loonied-loonied.$(OBJEXT) $(am__objects_13)
 loonied_OBJECTS = $(am_loonied_OBJECTS)
 am__DEPENDENCIES_3 = $(am__append_2)
@@ -821,8 +821,8 @@ am__objects_14 =  \
 #am__objects_15 =  \
 #	$(am__objects_14)
 am__objects_16 = qt/res/loonie-qt-res.$(OBJEXT)
-#am__objects_17 =  \
-#	$(am__objects_16)
+am__objects_17 =  \
+	$(am__objects_16)
 am_qt_loonie_qt_OBJECTS =  \
 	qt/qt_loonie_qt-loonie.$(OBJEXT) \
 	$(am__objects_15) $(am__objects_17)
@@ -1289,7 +1289,7 @@ am__set_TESTS_bases = \
   bases=`echo $$bases`
 RECHECK_LOGS = $(TEST_LOGS)
 TEST_SUITE_LOG = test-suite.log
-TEST_EXTENSIONS =  .test
+TEST_EXTENSIONS = .exe .test
 LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 LOG_COMPILE = $(LOG_COMPILER) $(AM_LOG_FLAGS) $(LOG_FLAGS)
 am__set_b = \
@@ -1303,7 +1303,7 @@ am__set_b = \
       b='$*';; \
   esac
 am__test_logs1 = $(TESTS:=.log)
-am__test_logs2 = $(am__test_logs1:.log=.log)
+am__test_logs2 = $(am__test_logs1:.exe.log=.log)
 TEST_LOGS = $(am__test_logs2:.test.log=.log)
 TEST_LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
 TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
@@ -1342,7 +1342,7 @@ am__relativize = \
 ACLOCAL = ${SHELL} /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = /usr/bin/ar
+AR = /usr/bin/i686-w64-mingw32-ar
 ARFLAGS = cr
 AUTOCONF = ${SHELL} /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/build-aux/missing autoconf
 AUTOHEADER = ${SHELL} /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/build-aux/missing autoheader
@@ -1355,23 +1355,23 @@ BITCOIN_CLI_NAME = loonie-cli
 BITCOIN_DAEMON_NAME = loonied
 BITCOIN_GUI_NAME = loonie-qt
 BITCOIN_TX_NAME = loonie-tx
-BOOST_CHRONO_LIB = -lboost_chrono
-BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -pthread -I/usr/include
-BOOST_FILESYSTEM_LIB = -lboost_filesystem
-BOOST_LDFLAGS = -L/usr/lib/x86_64-linux-gnu
-BOOST_LIBS = -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono
-BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options
-BOOST_SYSTEM_LIB = -lboost_system
-BOOST_THREAD_LIB = -lboost_thread
+BOOST_CHRONO_LIB = -lboost_chrono-mt-s
+BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -mthreads -I/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../include
+BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt-s
+BOOST_LDFLAGS = -L/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../lib
+BOOST_LIBS = -L/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../lib -lboost_system-mt-s -lboost_filesystem-mt-s -lboost_program_options-mt-s -lboost_thread_win32-mt-s -lboost_chrono-mt-s
+BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt-s
+BOOST_SYSTEM_LIB = -lboost_system-mt-s
+BOOST_THREAD_LIB = -lboost_thread_win32-mt-s
 BOOST_UNIT_TEST_FRAMEWORK_LIB = 
 BREW = 
 BUILD_QT = qt
 BUILD_TEST = 
 BUILD_TEST_QT = 
-CC = gcc
-CCACHE = 
+CC = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../native/bin/ccache i686-w64-mingw32-gcc
+CCACHE = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../native/bin/ccache
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2
+CFLAGS = -pipe -O2 
 CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 1
@@ -1379,19 +1379,19 @@ CLIENT_VERSION_MINOR = 0
 CLIENT_VERSION_REVISION = 0
 COMPARISON_TOOL_REORG_TESTS = 0
 COPYRIGHT_YEAR = 2018
-CPP = gcc -E
-CPPFILT = /usr/bin/c++filt
-CPPFLAGS =  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -DHAVE_QT5
+CPP = i686-w64-mingw32-gcc -E
+CPPFILT = /usr/bin/i686-w64-mingw32-c++filt
+CPPFLAGS = -I/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_MT -DWIN32 -D_WINDOWS -DBOOST_THREAD_USE_LIB -D_FILE_OFFSET_BITS=64 -DHAVE_QT5
 CRYPTO_CFLAGS = 
 CRYPTO_LIBS = -lcrypto
-CXX = g++ -std=c++11
-CXXCPP = g++ -std=c++11 -E
+CXX = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../native/bin/ccache i686-w64-mingw32-g++ -std=c++11
+CXXCPP = i686-w64-mingw32-g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wvla -Wformat-security -Wno-unused-parameter -Wno-implicit-fallthrough
+CXXFLAGS = -pipe -O2 
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
-DLLTOOL = false
+DLLTOOL = i686-w64-mingw32-dlltool
 DSYMUTIL = 
 DUMPBIN = 
 ECHO_C = 
@@ -1401,18 +1401,18 @@ EGREP = /bin/grep -E
 ERROR_CXXFLAGS = 
 EVENT_CFLAGS = 
 EVENT_LIBS = -levent
-EVENT_PTHREADS_CFLAGS = -pthread
-EVENT_PTHREADS_LIBS = -levent_pthreads -levent
-EXEEXT = 
+EVENT_PTHREADS_CFLAGS = 
+EVENT_PTHREADS_LIBS = 
+EXEEXT = .exe
 FGREP = /bin/grep -F
-GCOV = /usr/bin/gcov
+GCOV = /usr/bin/i686-w64-mingw32-gcov
 GENHTML = 
 GENISOIMAGE = 
 GIT = /usr/bin/git
 GREP = /bin/grep
 HARDENED_CPPFLAGS =  -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2
 HARDENED_CXXFLAGS =  -Wstack-protector -fstack-protector-all
-HARDENED_LDFLAGS =  -Wl,-z,relro -Wl,-z,now
+HARDENED_LDFLAGS =  -Wl,--dynamicbase -Wl,--nxcompat
 HAVE_CXX11 = 1
 HEXDUMP = /usr/bin/hexdump
 IMAGEMAGICK_CONVERT = 
@@ -1424,38 +1424,38 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 JAVA_COMPARISON_TOOL = 
 LCOV = 
-LD = /usr/bin/ld -m elf_x86_64
-LDFLAGS = 
+LD = /usr/bin/i686-w64-mingw32-ld
+LDFLAGS = -L/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../lib  -Wl,--large-address-aware
 LEVELDB_CPPFLAGS =  $(am__append_1)
-LEVELDB_TARGET_FLAGS = 
+LEVELDB_TARGET_FLAGS = TARGET_OS=OS_WINDOWS_CROSSCOMPILE
 LIBLEVELDB =  $(am__append_2)
 LIBMEMENV =  $(am__append_3)
 LIBOBJS = 
-LIBS = -lcrypto -lanl 
+LIBS = -lcrypto -lQt5PlatformSupport -lssp -lcrypt32 -liphlpapi -lshlwapi -lmswsock -lws2_32 -ladvapi32 -lrpcrt4 -luuid -loleaut32 -lole32 -lcomctl32 -lshell32 -lwinmm -lwinspool -lcomdlg32 -lgdi32 -luser32 -lkernel32 -lmingwthrd 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
-LIBTOOL_APP_LDFLAGS = 
+LIBTOOL_APP_LDFLAGS =  -all-static
 LIPO = 
 LN_S = ln -s
-LRELEASE = /usr/lib/qt5/bin/lrelease
+LRELEASE = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../native/bin/lrelease
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-LUPDATE = /usr/lib/qt5/bin/lupdate
+LUPDATE = 
 MAINT = 
 MAKEINFO = ${SHELL} /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/build-aux/missing makeinfo
-MAKENSIS = 
+MAKENSIS = none
 MANIFEST_TOOL = :
-MINIUPNPC_CPPFLAGS = 
+MINIUPNPC_CPPFLAGS = -DSTATICLIB -DMINIUPNP_STATICLIB
 MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = /bin/mkdir -p
-MOC = /usr/lib/qt5/bin/moc
+MOC = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../native/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
-NM = /usr/bin/nm -B
+NM = i686-w64-mingw32-nm
 NMEDIT = 
-OBJCOPY = /usr/bin/objcopy
-OBJCXX = g++ -std=c++11
+OBJCOPY = /usr/bin/i686-w64-mingw32-objcopy
+OBJCXX = i686-w64-mingw32-g++ -std=c++11
 OBJCXXDEPMODE = depmode=gcc3
 OBJCXXFLAGS = 
-OBJDUMP = objdump
+OBJDUMP = i686-w64-mingw32-objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
@@ -1467,47 +1467,47 @@ PACKAGE_TARNAME = loonie
 PACKAGE_URL = 
 PACKAGE_VERSION = 1.0.0
 PATH_SEPARATOR = :
-PIC_FLAGS = -fPIC
-PIE_FLAGS = -fPIC
-PKG_CONFIG = /usr/bin/pkg-config
+PIC_FLAGS = 
+PIE_FLAGS = 
+PKG_CONFIG = /usr/bin/pkg-config --static
 PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = 
+PKG_CONFIG_PATH = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../share/pkgconfig:/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../lib/pkgconfig
 PORT = 
-PROTOBUF_CFLAGS = -pthread
-PROTOBUF_LIBS = -lprotobuf -pthread -lpthread
-PROTOC = /usr/bin/protoc
-PTHREAD_CC = gcc
+PROTOBUF_CFLAGS = 
+PROTOBUF_LIBS = -lprotobuf
+PROTOC = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../native/bin/protoc
+PTHREAD_CC = i686-w64-mingw32-gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 PYTHON = /usr/bin/python3.6
-PYTHONPATH = 
+PYTHONPATH = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../native/lib/python/dist-packages:
 QR_CFLAGS = 
 QR_LIBS = -lqrencode
 QT4_CFLAGS = 
 QT4_LIBS = 
-QT5_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT5_LIBS = -lQt5Network -lQt5Widgets -lQt5Gui -lQt5Core
+QT5_CFLAGS = 
+QT5_LIBS = 
 QTPLATFORM_CFLAGS = 
 QTPLATFORM_LIBS = 
 QTPRINT_CFLAGS = 
 QTPRINT_LIBS = 
 QTXCBQPA_CFLAGS = 
 QTXCBQPA_LIBS = 
-QT_DBUS_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_DBUS_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_DBUS_LIBS = -lQt5DBus -lQt5Core
-QT_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_LDFLAGS = 
-QT_LIBS = -lQt5Network -lQt5Widgets -lQt5Gui -lQt5Core
-QT_PIE_FLAGS = -fPIC
+QT_DBUS_CFLAGS = 
+QT_DBUS_INCLUDES = 
+QT_DBUS_LIBS = -lQt5DBus -L/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../lib
+QT_INCLUDES = -I/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../include -I/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../include/QtCore -I/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../include/QtGui -I/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../include/QtWidgets -I/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../include/QtNetwork -I/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../include/QtTest -I/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../include/QtDBus
+QT_LDFLAGS =  -mwindows
+QT_LIBS = -lqwindows -lqminimal -lQt5Widgets -lQt5Network -lQt5Gui     -lQt5Core    -lqtharfbuzzng -lqtpcre -lqtpng -lz  -limm32  -L/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../lib -L/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../plugins/platforms
+QT_PIE_FLAGS = 
 QT_SELECT = qt5
-QT_TEST_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_TEST_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
-QT_TEST_LIBS = -lQt5Test -lQt5Core
-QT_TRANSLATION_DIR = 
-RANLIB = /usr/bin/ranlib
-RCC = /usr/lib/qt5/bin/rcc
-READELF = /usr/bin/readelf
+QT_TEST_CFLAGS = 
+QT_TEST_INCLUDES = 
+QT_TEST_LIBS = -lQt5Test -L/mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../lib
+QT_TRANSLATION_DIR = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../translations
+RANLIB = /usr/bin/i686-w64-mingw32-ranlib
+RCC = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../native/bin/rcc
+READELF = /usr/bin/i686-w64-mingw32-readelf
 RELDFLAGS = 
 RSVG_CONVERT = 
 SED = /bin/sed
@@ -1515,29 +1515,29 @@ SET_MAKE =
 SHELL = /bin/bash
 SSL_CFLAGS = 
 SSL_LIBS = -lssl
-STRIP = /usr/bin/strip
+STRIP = /usr/bin/i686-w64-mingw32-strip
 TESTDEFS = 
 TIFFCP = 
-UIC = /usr/lib/qt5/bin/uic
+UIC = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/depends/i686-w64-mingw32/share/../native/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QRCODE = 
 USE_UPNP = 
 VERSION = 1.0.0
-WINDOWS_BITS = 
-WINDRES = 
+WINDOWS_BITS = 32
+WINDRES = /usr/bin/i686-w64-mingw32-windres
 X11XCB_CFLAGS = 
 X11XCB_LIBS = 
 XGETTEXT = /usr/bin/xgettext
-ZMQ_CFLAGS = 
+ZMQ_CFLAGS =  -DZMQ_STATIC
 ZMQ_LIBS = -lzmq
 abs_builddir = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/src
 abs_srcdir = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie/src
 abs_top_builddir = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie
 abs_top_srcdir = /mnt/c/Users/bradu/Documents/Cloned_Coins/Loonie
-ac_ct_AR = ar
-ac_ct_CC = gcc
-ac_ct_CXX = g++
+ac_ct_AR = 
+ac_ct_CC = 
+ac_ct_CXX = 
 ac_ct_DUMPBIN = 
 ac_ct_OBJCXX = 
 am__include = include
@@ -1558,11 +1558,11 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = x86_64-pc-linux-gnu
-host_alias = 
-host_cpu = x86_64
-host_os = linux-gnu
-host_vendor = pc
+host = i686-w64-mingw32
+host_alias = i686-w64-mingw32
+host_cpu = i686
+host_os = mingw32
+host_vendor = w64
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
@@ -1575,7 +1575,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /usr/local
+prefix = /
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -8117,13 +8117,13 @@ qt/test/test_loonie-qt.log: qt/test/test_loonie-qt$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-#.test$(EXEEXT).log:
-#	@p='$<'; \
-#	$(am__set_b); \
-#	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
-#	--log-file $$b.log --trs-file $$b.trs \
-#	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
-#	"$$tst" $(AM_TESTS_FD_REDIRECT)
+.test$(EXEEXT).log:
+	@p='$<'; \
+	$(am__set_b); \
+	$(am__check_pre) $(TEST_LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_TEST_LOG_DRIVER_FLAGS) $(TEST_LOG_DRIVER_FLAGS) -- $(TEST_LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 
 distdir: $(DISTFILES)
 	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
