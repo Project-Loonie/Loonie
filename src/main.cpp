@@ -2153,9 +2153,9 @@ double ConvertBitsToDouble(unsigned int nBits)
 int64_t GetBlockValue(int nHeight)
 {
     if (nHeight == 0) {
-        return 1500000 * COIN; //5.2M premine
-    } else if (nHeight <= 2000) { // end of swap period
-        return 2000 * COIN;        
+        return 30000000 * COIN; //30M premine
+    } else if (nHeight <= 1000) { // end of swap period
+        return 0.001 * COIN;        
     } else if (nHeight <= 30000) { 
         return 30 * COIN;
     } else if (nHeight <= 555602) { 
